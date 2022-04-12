@@ -12,10 +12,10 @@ int xposmp;
 int yposmp;
 int xposmp2;
 int yposmp2;
-int ballxpos;
-int ballypos;
-int ballxdir = 1;
-int ballydir = 1;
+float ballxpos;
+float ballypos;
+float vx;
+float vy;
 
 
 void setup() {
@@ -27,6 +27,8 @@ void setup() {
   mode = mp;
   ballxpos = 600;
   ballypos = 400;
+  vx = 10;
+  vy = -10;
 }
 
 void draw() {

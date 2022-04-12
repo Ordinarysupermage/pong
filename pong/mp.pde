@@ -1,7 +1,7 @@
 void mp() {
 
-  ballxpos = ballxpos + 3* ballxdir;
-  ballypos = ballypos + 3* ballydir;
+  ballxpos = ballxpos + vx;
+  ballypos = ballypos + vy;
   strokeWeight(10);
   fill(#FFFFFF);
   line( 600, 0, 600, 800);
@@ -15,27 +15,34 @@ void mp() {
   ellipse( ballxpos, ballypos, 100, 100);
 
   double d = distance(xposmp, yposmp, ballxpos, ballypos);
-  println(d);
+  double d2 = distance2( xposmp2, yposmp2, ballxpos, ballypos);
+//  println(d);
 
   if (d < 200) {
-    ballxdir = -1;
-    ballydir = -1;
+    vx = ballxpos - xposmp;
+    vy = ballypos - yposmp;
+    // println("1");
+  }
+  
+  if (d2 < 200) {
+    vx = -1;
+    vy = -1;
     // println("1");
   }
 
   if (ballxpos > 1150 ) {
-    ballxdir *= -1;
+    vx = vx * -1;
   }
 
   if (ballxpos < 50) {
-    ballxdir *= -1;
+    vx = vx * -1;
   }
 
   if (ballypos > 750) {
-    ballydir *= -1;
+    vy = vy * -1;
   }
 
   if (ballypos < 50) {
-    ballydir *= -1;
+    vy = vy * -1;
   }
 }

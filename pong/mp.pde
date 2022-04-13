@@ -16,17 +16,17 @@ void mp() {
 
   double d = distance(xposmp, yposmp, ballxpos, ballypos);
   double d2 = distance2( xposmp2, yposmp2, ballxpos, ballypos);
-//  println(d);
+  //  println(d);
 
   if (d < 200) {
-    vx = ballxpos - xposmp;
-    vy = ballypos - yposmp;
+    vx = (ballxpos - xposmp)/10;
+    vy = (ballypos - yposmp)/10;
     // println("1");
   }
-  
+
   if (d2 < 200) {
-    vx = -1;
-    vy = -1;
+    vx = (ballxpos - xposmp2)/10;
+    vy = (ballypos - yposmp2)/10;
     // println("1");
   }
 
@@ -44,5 +44,21 @@ void mp() {
 
   if (ballypos < 50) {
     vy = vy * -1;
+  }
+
+  if ( Skey == true) {
+    yposmp = yposmp + 7;
+  }
+
+  if ( Wkey == true) {
+    yposmp = yposmp - 7;
+  }
+
+  if ( Upkey == true) {
+    yposmp2 = yposmp2 - 7;
+  }
+
+  if ( Downkey == true) {
+    yposmp2 = yposmp2 + 7;
   }
 }

@@ -7,11 +7,13 @@ void keyPressed() {
 
     if ( keyCode == 'W') {
       if ( yposmp > 150) {
-        yposmp = yposmp - 7;
+        Wkey = true;
       }
-    } else if ( keyCode == 'S') {
+    } 
+
+    if ( keyCode == 'S') {
       if ( yposmp < 650) {
-        yposmp = yposmp + 7;
+        Skey = true;
       }
     }
 
@@ -20,13 +22,41 @@ void keyPressed() {
     if ( key == CODED) {
       if ( keyCode == UP) {
         if ( yposmp2 > 150) {
-          yposmp2 = yposmp2 - 7;
+          Upkey = true;
         }
-      } else if ( keyCode == DOWN) {
+      } 
+
+      if ( keyCode == DOWN) {
         if ( yposmp2 < 650) {
-          yposmp2 = yposmp2 + 7;
+          Downkey = true;
         }
       }
+    }
+  }
+}
+
+void keyReleased() {
+  if ( keyCode == 'W') { 
+    if ( yposmp > 150) {
+      Wkey = false;
+    }
+  }
+
+  if ( keyCode == 'S') {
+    if ( yposmp < 650) {
+      Skey = false;
+    }
+  }
+
+  if ( keyCode == UP) {
+    if ( yposmp2 > 150) {
+      Upkey = false;
+    }
+  } 
+
+  if ( keyCode == DOWN) {
+    if ( yposmp2 < 650) {
+      Downkey = false;
     }
   }
 }

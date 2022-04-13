@@ -17,6 +17,8 @@ float ballypos;
 float vx;
 float vy;
 
+boolean Wkey, Skey, Upkey, Downkey;
+
 
 void setup() {
   size(1200, 800);
@@ -29,6 +31,11 @@ void setup() {
   ballypos = 400;
   vx = 10;
   vy = -10;
+  
+  Wkey = false;
+  Skey = false;
+  Upkey = false;
+  Downkey = false;
 }
 
 void draw() {

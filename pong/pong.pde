@@ -8,6 +8,7 @@ final int sp = 2;
 final int mp = 3;
 final int gameover = 4;
 final int menu = 5;
+final int score = 6;
 int xposmp;
 int yposmp;
 int xposmp2;
@@ -19,6 +20,8 @@ float vy;
 
 boolean Wkey, Skey, Upkey, Downkey;
 
+int leftscore, rightscore;
+
 
 void setup() {
   size(1200, 800);
@@ -26,12 +29,12 @@ void setup() {
   yposmp = 400;
   xposmp2 = 1200;
   yposmp2 = 400;
-  mode = mp;
+  mode = Intro;
   ballxpos = 600;
   ballypos = 400;
   vx = 10;
   vy = -10;
-  
+
   Wkey = false;
   Skey = false;
   Upkey = false;
@@ -52,5 +55,7 @@ void draw() {
     gameover();
   } else if ( mode == menu) {
     menu();
+  } else if ( mode == score) {
+    score();
   }
 }

@@ -1,10 +1,12 @@
 void mp() {
-
+  fill(#FFFFFF);
+  rectMode(CENTER);
+  rect( 600, 400, 20, 820);
+  textAlign(CENTER, CENTER);
   ballxpos = ballxpos + vx;
   ballypos = ballypos + vy;
   strokeWeight(10);
   fill(#FFFFFF);
-  line( 600, 0, 600, 800);
   strokeWeight(2);
   fill(#FFFFFF);
   ellipseMode(CENTER);
@@ -14,28 +16,39 @@ void mp() {
   // ball
   ellipse( ballxpos, ballypos, 100, 100);
 
+  //score
+  textSize(20);
+  text(leftscore, 500, 50);
+  text(rightscore, 700, 50);
+
+  //
+
+
   double d = distance(xposmp, yposmp, ballxpos, ballypos);
   double d2 = distance2( xposmp2, yposmp2, ballxpos, ballypos);
   //  println(d);
 
   if (d < 200) {
-    vx = (ballxpos - xposmp)/10;
-    vy = (ballypos - yposmp)/10;
+    vx = (ballxpos - xposmp)/12;
+    vy = (ballypos - yposmp)/12;
     // println("1");
   }
 
   if (d2 < 200) {
-    vx = (ballxpos - xposmp2)/10;
-    vy = (ballypos - yposmp2)/10;
+    vx = (ballxpos - xposmp2)/12;
+    vy = (ballypos - yposmp2)/12;
     // println("1");
   }
 
-  if (ballxpos > 1150 ) {
-    vx = vx * -1;
+  if (ballxpos > 1200 ) {
+    leftscore = leftscore + 1;
+    mode = score;
+    
+    //vx = vx * -1;
   }
 
   if (ballxpos < 50) {
-    vx = vx * -1;
+    //vx = vx * -1;
   }
 
   if (ballypos > 750) {
@@ -47,18 +60,18 @@ void mp() {
   }
 
   if ( Skey == true) {
-    yposmp = yposmp + 7;
+    yposmp = yposmp + 5;
   }
 
   if ( Wkey == true) {
-    yposmp = yposmp - 7;
+    yposmp = yposmp - 5;
   }
 
   if ( Upkey == true) {
-    yposmp2 = yposmp2 - 7;
+    yposmp2 = yposmp2 - 5;
   }
 
   if ( Downkey == true) {
-    yposmp2 = yposmp2 + 7;
+    yposmp2 = yposmp2 + 5;
   }
 }

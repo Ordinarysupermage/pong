@@ -6,61 +6,49 @@ void keyPressed() {
     //left paddle
 
     if ( keyCode == 'W') {
-      if ( yposmp > 150) {
-        Wkey = true;
-      }
+      Wkey = true;
     } 
 
     if ( keyCode == 'S') {
-      if ( yposmp < 650) {
-        Skey = true;
-      }
+      Skey = true;
     }
 
     //right paddle
 
     if ( key == CODED) {
       if ( keyCode == UP) {
-        if ( yposmp2 > 150) {
-          Upkey = true;
-        }
+        Upkey = true;
       } 
 
       if ( keyCode == DOWN) {
-        if ( yposmp2 < 650) {
-          Downkey = true;
-        }
+        Downkey = true;
       }
     }
   }
 }
 
 void keyReleased() {
-  if ( keyCode == 'W') { 
-    if ( yposmp > 150) {
-      Wkey = false;
-    }
+  if ( keyCode == 'W') {
+    Wkey = false;
   }
 
   if ( keyCode == 'S') {
-    if ( yposmp < 650) {
-      Skey = false;
-    }
+    Skey = false;
   }
 
   if ( keyCode == UP) {
-    if ( yposmp2 > 150) {
-      Upkey = false;
-    }
+    Upkey = false;
   } 
 
   if ( keyCode == DOWN) {
-    if ( yposmp2 < 650) {
-      Downkey = false;
-    }
+    Downkey = false;
   }
 }
 
 void mousePressed() {
-  mode = mp;
+  if ( mode == Intro) {
+    mode = mp;
+  } else if ( mode == score) {
+    mode = mp;
+  }
 }

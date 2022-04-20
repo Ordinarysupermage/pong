@@ -43,12 +43,14 @@ void mp() {
   if (ballxpos > 1200 ) {
     leftscore = leftscore + 1;
     mode = score;
-    
+
     //vx = vx * -1;
   }
 
   if (ballxpos < 50) {
     //vx = vx * -1;
+    rightscore = rightscore + 1;
+    mode = score;
   }
 
   if (ballypos > 750) {

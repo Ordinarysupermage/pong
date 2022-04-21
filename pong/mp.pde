@@ -40,14 +40,14 @@ void mp() {
     // println("1");
   }
 
-  if (ballxpos > 1200 ) {
+  if (ballxpos > 1300 ) {
     leftscore = leftscore + 1;
     mode = score;
 
     //vx = vx * -1;
   }
 
-  if (ballxpos < 50) {
+  if (ballxpos < -100) {
     //vx = vx * -1;
     rightscore = rightscore + 1;
     mode = score;

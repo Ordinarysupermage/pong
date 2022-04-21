@@ -22,6 +22,8 @@ PFont gta;
 
 PImage Franklin;
 PImage Trevor;
+PImage Lester;
+PImage Michael;
 
 color red = #FF0000;
 
@@ -31,6 +33,10 @@ int leftscore, rightscore;
 
 boolean selectionp1F;
 boolean selectionp1T;
+boolean selectionp2L;
+boolean selectionp2M;
+boolean selectorsp;
+boolean selectormp;
 
 
 void setup() {
@@ -38,11 +44,14 @@ void setup() {
   textSize(90);
   selectionp1F = false;
   selectionp1T = false;
+  selectionp2L = false;
+  selectionp2M = false;
+  selectorsp = false;
+  selectormp = false;
   xposmp = 0;
   yposmp = 400;
   xposmp2 = 1200;
   yposmp2 = 400;
-  mode = Intro;
   ballxpos = 600;
   ballypos = 400;
   vx = 10;
@@ -55,6 +64,8 @@ void setup() {
   
   Franklin = loadImage("Franklin.jpg");
   Trevor = loadImage("Trevor.jpg");
+  Lester = loadImage("lester.jpg");
+  Michael = loadImage("Michael.jpg");
   
   gta = createFont("pricedown bl.otf", 100);
   

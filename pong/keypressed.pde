@@ -70,5 +70,21 @@ void mousePressed() {
       selectionp1T = true;
       selectionp1F = false;
     }
+    if ( mouseX > 650 && mouseX < 850 && mouseY > 300 && mouseY < 400) {
+      selectionp2L = true;
+      selectionp2M = false;
+    }
+    if ( mouseX > 900 && mouseX < 1100 && mouseY > 300 && mouseY < 400) {
+      selectionp2L = false;
+      selectionp2M = true;
+    }
+    if ( mouseX > 280 && mouseX < 360 && mouseY > 490 && mouseY < 570) {
+      selectorsp = true;
+      selectormp = false;
+    }
+    if ( mouseX > 840 && mouseX < 920 && mouseY > 490 && mouseY < 570) {
+      selectorsp = false;
+      selectormp = true;
+    }
   }
 }

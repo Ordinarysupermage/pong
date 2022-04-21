@@ -1,5 +1,13 @@
 void gameover() {
-   background(0);
+  background(0);
+  xposmp = 0;
+  yposmp = 400;
+  xposmp2 = 1200;
+  yposmp2 = 400;
+  ballxpos = 600;
+  ballypos = 400;
+  vx = 10;
+  vy = -10;
 
   textAlign(CENTER, CENTER);
   textFont(gta);

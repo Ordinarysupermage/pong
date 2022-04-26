@@ -1,14 +1,20 @@
+import processing.video.*;
+
 //Jerry Feng
 //2-3
 //2022-04-11
 
 int mode;
+int timermp = 0;
+int speed = 15;
+int timerintro = 0;
 final int Intro = 1;
 final int sp = 2;
 final int mp = 3;
 final int gameover = 4;
 final int menu = 5;
 final int score = 6;
+final int Pause = 7;
 int xposmp;
 int yposmp;
 int xposmp2;
@@ -24,6 +30,7 @@ PImage Franklin;
 PImage Trevor;
 PImage Lester;
 PImage Michael;
+PImage Granade;
 
 color red = #FF0000;
 
@@ -38,6 +45,7 @@ boolean selectionp2M;
 boolean selectorsp;
 boolean selectormp;
 
+Movie movie;
 
 void setup() {
   size(1200, 800);
@@ -66,10 +74,14 @@ void setup() {
   Trevor = loadImage("Trevor.jpg");
   Lester = loadImage("lester.jpg");
   Michael = loadImage("Michael.jpg");
+  Granade = loadImage("granade.jpg");
   
   gta = createFont("pricedown bl.otf", 100);
   
-  mode = menu;
+  mode = Intro;
+  
+  movie = new Movie( this, "Gtaintro.mp4");
+  movie.play();
 }
 
 void draw() {
@@ -78,8 +90,6 @@ void draw() {
 
   if ( mode == Intro) {
     Intro();
-  } else if ( mode == sp) {
-    sp();
   } else if ( mode == mp) {
     mp();
   } else if ( mode == gameover) {
@@ -88,6 +98,8 @@ void draw() {
     menu();
   } else if ( mode == score) {
     score();
+  } else if ( mode == Pause) {
+    Pause();
   }
   
   if ( leftscore > 2) {
@@ -96,5 +108,9 @@ void draw() {
   } else if ( rightscore > 2) {
     win = win2;
     mode = gameover;
+  }
+  
+  if ( timerintro > 470) {
+    mode = menu;
   }
 }

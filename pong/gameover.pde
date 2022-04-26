@@ -1,4 +1,18 @@
 void gameover() {
+  timermp = 0;
+  selectionp1F = false;
+  selectionp1T = false;
+  selectionp2L = false;
+  selectionp2M = false;
+  selectorsp = false;
+  selectormp = false;
+
+  Wkey = false;
+  Skey = false;
+  Upkey = false;
+  Downkey = false;
+
+  cursor();
   background(0);
   xposmp = 0;
   yposmp = 400;

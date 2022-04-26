@@ -1,10 +1,14 @@
 void mp() {
+  timermp = timermp + 1;
+  noCursor();
   fill(#FFFFFF);
   rectMode(CENTER);
   rect( 600, 400, 20, 820);
   textAlign(CENTER, CENTER);
-  ballxpos = ballxpos + vx;
-  ballypos = ballypos + vy;
+  if ( timermp > 100) {
+    ballxpos = ballxpos + vx;
+    ballypos = ballypos + vy;
+  }
   strokeWeight(10);
   fill(#FFFFFF);
   strokeWeight(2);
@@ -20,6 +24,26 @@ void mp() {
   textSize(20);
   text(leftscore, 500, 50);
   text(rightscore, 700, 50);
+
+
+
+  //
+
+  if ( yposmp < 150) {
+    yposmp = 150;
+  }
+
+  if ( yposmp > 650) {
+    yposmp = 650;
+  }
+
+  if ( yposmp2 < 150) {
+    yposmp2 = 150;
+  }
+
+  if ( yposmp2 > 650) {
+    yposmp2 = 650;
+  }
 
   //
 
@@ -69,11 +93,42 @@ void mp() {
     yposmp = yposmp - 5;
   }
 
-  if ( Upkey == true) {
-    yposmp2 = yposmp2 - 5;
+  if ( selectormp == true) {
+    if ( Upkey == true) {
+      yposmp2 = yposmp2 - 5;
+    }
+
+    if ( Downkey == true) {
+      yposmp2 = yposmp2 + 5;
+    }
+  }
+  
+  if ( selectorsp == true) {
+    if ( Upkey == true) {
+      yposmp2 = yposmp2 - speed;
+    }
+
+    if ( Downkey == true) {
+      yposmp2 = yposmp2 + speed;
+    }
+  }
+  imageMode(CORNER);
+  if ( selectionp1F == true) {
+    image(Franklin, xposmp-20, yposmp - 78, 150, 150);
   }
 
-  if ( Downkey == true) {
-    yposmp2 = yposmp2 + 5;
+  if ( selectionp1T == true) {
+    image(Trevor, xposmp-20, yposmp - 78, 150, 150);
   }
+
+  if ( selectionp2L == true) {
+    image(Lester, xposmp2- 130, yposmp2-78, 150, 150);
+  }
+
+  if ( selectionp2M == true) {
+    image(Michael, xposmp2-130, yposmp2-78, 150, 150);
+  }
+
+  imageMode(CENTER);
+  image( Granade, ballxpos, ballypos, 72, 72);
 }

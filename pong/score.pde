@@ -4,6 +4,8 @@ final int win2 = 2;
 
 
 void score() {
+  timermp = 0;
+  cursor();
   xposmp = 0;
   yposmp = 400;
   xposmp2 = 1200;

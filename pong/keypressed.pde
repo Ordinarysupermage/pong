@@ -1,10 +1,13 @@
 void keyPressed() {
-
-
+  
+  
   if ( mode == mp) {
+    
+      if (key == ' '){
+        mode = Pause;
+      }
 
     //left paddle
-
     if ( keyCode == 'W') {
       Wkey = true;
     }
@@ -14,20 +17,38 @@ void keyPressed() {
     }
 
     //right paddle
+    if (selectormp == true ) {
+      if ( key == CODED) {
+        if ( keyCode == UP) {
+          Upkey = true;
+        }
 
-    if ( key == CODED) {
-      if ( keyCode == UP) {
+        if ( keyCode == DOWN) {
+          Downkey = true;
+        }
+      }
+    } else if ( selectorsp == true) {
+      if ( ballypos > yposmp2) {
+        //yposmp2 = yposmp2 + 10;
+        Downkey = true;
+        Upkey = false;
+      } else {
+        Downkey = false;
         Upkey = true;
       }
+      
 
-      if ( keyCode == DOWN) {
-        Downkey = true;
-      }
+      //if ( ballypos < yposmp2) {
+      //  //yposmp2 = yposmp2 - 10;
+      //  Upkey = true;
+      //  Downkey = false;
+      //}
     }
   }
 }
 
 void keyReleased() {
+
   if ( keyCode == 'W') {
     Wkey = false;
   }
@@ -36,13 +57,23 @@ void keyReleased() {
     Skey = false;
   }
 
-  if ( keyCode == UP) {
-    Upkey = false;
-  }
+  if ( selectormp == true) {
+    if ( keyCode == UP) {
+      Upkey = false;
+    }
 
-  if ( keyCode == DOWN) {
-    Downkey = false;
-  }
+    if ( keyCode == DOWN) {
+      Downkey = false;
+    }
+  } // else if ( selectorsp == true) {
+  //  if (Upkey == true) {
+  //    Upkey = false;
+  //  }
+
+  //  if ( Downkey == true) {
+  //    Downkey = false;
+  //  }
+  //}
 }
 
 void mousePressed() {
@@ -57,7 +88,7 @@ void mousePressed() {
   }
 
   if ( mode == gameover) {
-    mode = Intro;
+    mode = menu;
   }
 
   if ( mode == menu) {
@@ -85,6 +116,9 @@ void mousePressed() {
     if ( mouseX > 840 && mouseX < 920 && mouseY > 490 && mouseY < 570) {
       selectorsp = false;
       selectormp = true;
+    }
+    if ( mouseX > 500 && mouseX < 700 && mouseY > 610 && mouseY < 710) {
+      mode = mp;
     }
   }
 }

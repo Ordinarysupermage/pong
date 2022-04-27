@@ -1,3 +1,12 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+
+
 import processing.video.*;
 
 //Jerry Feng
@@ -15,6 +24,7 @@ final int gameover = 4;
 final int menu = 5;
 final int score = 6;
 final int Pause = 7;
+final int exit = 8;
 int xposmp;
 int yposmp;
 int xposmp2;
@@ -44,8 +54,12 @@ boolean selectionp2L;
 boolean selectionp2M;
 boolean selectorsp;
 boolean selectormp;
+boolean drawsp;
+boolean drawmp;
 
 Movie movie;
+Minim minim;
+AudioPlayer menus, gun, explosion, wins;
 
 void setup() {
   size(1200, 800);
@@ -69,19 +83,26 @@ void setup() {
   Skey = false;
   Upkey = false;
   Downkey = false;
-  
+
   Franklin = loadImage("Franklin.jpg");
   Trevor = loadImage("Trevor.jpg");
   Lester = loadImage("lester.jpg");
   Michael = loadImage("Michael.jpg");
   Granade = loadImage("granade.jpg");
-  
+
   gta = createFont("pricedown bl.otf", 100);
-  
-  mode = Intro;
-  
+
+  mode = menu;
+
   movie = new Movie( this, "Gtaintro.mp4");
   movie.play();
+  
+  
+  minim = new Minim(this);
+  menus = minim.loadFile(" menu.mp3");
+  //gun 
+  //explosion 
+  //wins
 }
 
 void draw() {
@@ -100,8 +121,10 @@ void draw() {
     score();
   } else if ( mode == Pause) {
     Pause();
+  } else if ( mode == exit) {
+    exitscreen();
   }
-  
+
   if ( leftscore > 2) {
     win = win1;
     mode = gameover;
@@ -109,8 +132,9 @@ void draw() {
     win = win2;
     mode = gameover;
   }
-  
+
   if ( timerintro > 470) {
     mode = menu;
+    timerintro = 0;
   }
 }

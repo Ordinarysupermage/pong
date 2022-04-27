@@ -20,6 +20,5 @@ void Intro() {
 }
 
 void movieEvent(Movie movie) {
-  
   movie.read();
 }

@@ -1,4 +1,5 @@
 void mp() {
+  menus.pause();
   timermp = timermp + 1;
   noCursor();
   fill(#FFFFFF);

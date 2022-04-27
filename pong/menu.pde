@@ -1,4 +1,5 @@
 void menu() {
+  menus.play();
   xposmp = 0;
   yposmp = 400;
   xposmp2 = 1200;
@@ -7,8 +8,8 @@ void menu() {
   ballypos = 400;
   vx = 10;
   vy = -10;
-  
-  
+
+
   timermp = 0;
   cursor();
   background(0);
@@ -23,6 +24,7 @@ void menu() {
   image( Franklin, 200, 350, 200, 100);
   noFill();
   rectMode(CENTER);
+  strokeWeight(5);
   if ( mouseX > 100 && mouseX < 300 && mouseY > 300 && mouseY < 400) {
     stroke(#FFFFFF);
   } else {
@@ -81,7 +83,7 @@ void menu() {
 
   fill(red);
   text("SP", 320, 530);
-  if ( selectorsp == true) {
+  if ( dist(mouseX, mouseY, 320, 530) < 55) {
     ellipseMode(CENTER);
     stroke(#ffffff);
     strokeWeight(5);
@@ -89,15 +91,34 @@ void menu() {
     ellipse( 320, 530, 110, 110);
   }
 
+  if ( drawsp == true) {
+    ellipseMode(CENTER);
+    stroke(#ffffff);
+    strokeWeight(5);
+    noFill();
+    ellipse( 320, 530, 110, 110);
+  }
+
+
+
   fill(red);
   text("MP", 880, 530);
-  if ( selectormp == true) {
+  if ( dist(mouseX, mouseY, 880, 530) < 55) {
     ellipseMode(CENTER);
     stroke(#FFFFFF);
     strokeWeight(5);
     noFill();
     ellipse( 880, 530, 110, 110);
   }
+
+  if ( drawmp == true) {
+    ellipseMode(CENTER);
+    stroke(#FFFFFF);
+    strokeWeight(5);
+    noFill();
+    ellipse( 880, 530, 110, 110);
+  }
+
 
   fill(red);
   textAlign(CENTER, CENTER);
@@ -111,4 +132,12 @@ void menu() {
     strokeWeight(5);
   }
   rect(600, 660, 200, 100);
+
+  text("EXIT", 1100, 740);
+  if ( mouseX > 1000 && mouseX < 1200 && mouseY > 700 && mouseY < 800) {
+    strokeWeight(8);
+  } else {
+    strokeWeight(5);
+  }
+  rect( 1100, 750, 200, 100);
 }

@@ -7,6 +7,10 @@ void gameover() {
   selectorsp = false;
   selectormp = false;
 
+  rightscore = 0;
+  leftscore = 0;
+
+
   Wkey = false;
   Skey = false;
   Upkey = false;

@@ -56,18 +56,24 @@ void mp() {
   if (d < 200) {
     vx = (ballxpos - xposmp)/12;
     vy = (ballypos - yposmp)/12;
+    gun.rewind();
+    gun.play();
     // println("1");
   }
 
   if (d2 < 200) {
     vx = (ballxpos - xposmp2)/12;
     vy = (ballypos - yposmp2)/12;
+    gun.rewind();
+    gun.play();
     // println("1");
   }
 
   if (ballxpos > 1300 ) {
     leftscore = leftscore + 1;
     mode = score;
+    explosion.rewind();
+    explosion.play();
 
     //vx = vx * -1;
   }
@@ -76,6 +82,8 @@ void mp() {
     //vx = vx * -1;
     rightscore = rightscore + 1;
     mode = score;
+    explosion.rewind();
+    explosion.play();
   }
 
   if (ballypos > 750) {
@@ -103,7 +111,7 @@ void mp() {
       yposmp2 = yposmp2 + 5;
     }
   }
-  
+
   if ( selectorsp == true) {
     if ( Upkey == true) {
       yposmp2 = yposmp2 - speed;

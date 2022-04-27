@@ -1,7 +1,14 @@
 void keyPressed() {
 
-
   if ( mode == mp) {
+    
+    if (key == '1') {
+      rightscore = 4;
+    }
+    
+    if (key == 'z') {
+      leftscore = 4;
+    }
 
     if (key == ' ') {
       mode = Pause;

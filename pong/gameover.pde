@@ -33,8 +33,12 @@ void gameover() {
   if ( win == win1) {
     textSize(100);
     text("Player 1 respect ++", 600, 400);
+    wins.rewind();
+    wins.play();
   } else if ( win == win2) {
     textSize(100);
     text("Player 2 respect ++", 600, 400);
+    wins.rewind();
+    wins.play();
   }
 }

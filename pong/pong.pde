@@ -92,17 +92,17 @@ void setup() {
 
   gta = createFont("pricedown bl.otf", 100);
 
-  mode = Intro;
+  mode = menu;
 
   movie = new Movie( this, "Gtaintro.mp4");
   movie.play();
-
-
+  
+  
   minim = new Minim(this);
-  menus = minim.loadFile("menu.mp3");
-  gun = minim.loadFile("gun.mp3"); 
-  explosion = minim.loadFile("grenade.mp3");
-  wins = minim.loadFile("missioncomplete.mp3");
+  menus = minim.loadFile(" menu.mp3");
+  //gun 
+  //explosion 
+  //wins
 }
 
 void draw() {
@@ -133,7 +133,7 @@ void draw() {
     mode = gameover;
   }
 
-  if ( timerintro > 160) {
+  if ( timerintro > 470) {
     mode = menu;
     timerintro = 0;
   }

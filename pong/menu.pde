@@ -1,5 +1,4 @@
 void menu() {
-  menus.rewind();
   menus.play();
   xposmp = 0;
   yposmp = 400;
